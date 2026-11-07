@@ -1,0 +1,282 @@
+:root {
+  --white:      hsl(0, 0%, 100%);
+  --stone-100:  hsl(30, 54%, 90%);
+  --stone-150:  hsl(30, 18%, 87%);
+  --stone-600:  hsl(30, 10%, 34%);
+  --stone-900:  hsl(24, 5%, 18%);
+  --brown-800:  hsl(14, 45%, 36%);
+  --rose-800:   hsl(332, 51%, 32%);
+  --rose-50:    hsl(330, 100%, 98%);
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+/* 正文用 */
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+@font-face {
+  font-family: "Outfit";
+  src: url("./assets/fonts/Outfit-Bold.ttf") format("truetype");
+  font-weight: 700;
+}
+
+/* 标题用，只有一档 */
+@font-face {
+  font-family: "Young Serif";
+  src: url("./assets/fonts/YoungSerif-Regular.ttf") format("truetype");
+  font-weight: 400;
+}
+h1, h2, h3 {
+  font-family: "Young Serif", serif;
+  font-weight: 400;
+}
+
+h1 { font-size: 40px; }
+h2 { font-size: 28px; }
+
+body{
+    background: var(--stone-100);
+    color: var(--stone-600);
+    font-family: "Outfit", sans-serif;
+    font-size: 16px; 
+    line-height: 1.5; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 122px;
+}
+.box{
+    background: var(--white);
+    width: 740px;
+    /* height: 1710px; */
+    padding: 35px;
+    border-radius: 20px;
+   
+}
+.box .header{
+ margin-bottom: 30px;
+}
+.box .header img{
+ 
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 39px;
+    border-radius: 12px;
+}
+.box .header h1 { 
+    color: var(--stone-900); 
+    margin-bottom: 20px;
+}
+.box .header p{
+ color: var(--stone-600);
+}
+
+
+
+.card{
+/* width: 655px; */
+/* height: 179px; */
+padding-top: 30px;
+padding-bottom: 30px;
+padding-left: 27px;
+background: var(--rose-50);
+border-radius: 12px;
+margin-bottom: 33px;
+}
+
+.card h2{
+    font-weight: 700;
+    font-size: 20px;
+    font-family: "Outfit",sans-serif;
+  color: var(--rose-800);
+  margin-bottom: 18px;
+  
+}
+/* .card ul{
+    list-style: disc;
+    padding-left: 22px;
+} */
+
+.card li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);                /* 垂直位置，跟文字对齐 */
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;      /* 变成圆点 */
+  background: var(--rose-800);
+}
+/* .card ul{
+    padding-left: 22px;
+} */
+.card li{
+    position: relative;
+    margin-bottom: 13px;
+     padding-left: 30px;
+}
+.card li span{
+    color: var(--stone-900);
+    font-weight: 700;
+}
+
+.recipe{
+  border-bottom: 1px solid var(--stone-150);
+  
+}
+
+.recipe h2{
+  color: var(--brown-800);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+
+.recipe ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+.recipe li {
+  position: relative;
+  padding-left: 24px;      /* ← 这个数 = 点宽 + 间距 */
+  margin-bottom: 12px;
+}
+.recipe li:last-child{
+  margin-bottom: 32px;
+}
+
+.recipe li::before {
+  content: "";
+  position: absolute;
+  left: 0;                 /* ← 点离左边多远 */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--brown-800);
+}
+.instrutions h2{
+  color: var(--brown-800);
+  font-size: 28px;
+  margin-bottom: 25px;
+}
+.instrutions{
+  padding-top: 35px;
+  padding-bottom: 33px;
+  border-bottom: 1px solid var(--stone-150);
+}
+.instrutions ol{
+    padding-left: 40px;
+}
+.instrutions li{
+  margin-bottom: 14px;
+}
+.instrutions li:last-child{
+  margin-bottom: 0;
+}
+.instrutions li::marker{
+  content: counter(list-item) ".        ";
+  color: var(--brown-800);
+  font-weight: 600;
+}
+
+.instrutions li span{
+    color: var(--stone-900);
+    font-weight: 700;
+}
+.nutrition{
+  padding-top: 35px;
+  padding-bottom: 33px;
+  
+}
+.nutrition h2{
+  margin-bottom: 33px;
+  color: var(--brown-800);
+   margin-bottom: 25px;
+}
+.nutrition p{
+  margin-bottom: 33px;
+}
+
+.nutrition table{
+  table-layout: fixed;
+  width: 100%;
+  border-collapse: collapse;
+}
+.nutrition table tr{
+  border-bottom: 1px solid var(--stone-150);
+}
+.nutrition table tr:last-child{
+  border-bottom: none;
+}
+.nutrition table th{
+  width: 50%;
+}
+.nutrition table th,
+.nutrition table td {
+  padding: 14px 0;
+  text-align: left;
+}
+.nutrition table th{
+  font-weight: 400;
+  color: var(--stone-600);
+  padding-left: 30px;
+}
+.nutrition table td{
+  padding-left: 5px;
+  color: var(--brown-800);
+  font-weight: 700;
+}
+
+@media(max-width:600px){
+body{
+  padding: 0;
+  }
+  .box{
+    width: 100%;
+    padding: 0;
+    border-radius: 0;
+  }
+  .box .header img{
+    width: 100%;
+    height: 176px;
+    object-fit: cover;
+    border-radius: 0;
+  }
+   .box .header h1,
+  .box .header p,
+  .box .card,
+  .box .recipe,
+  .box .instrutions,
+  .box .nutrition {
+    margin-left: 32px;
+    margin-right: 32px;
+  }
+h1 { font-size: 36px; }
+
+}
+
+
+
+
+
